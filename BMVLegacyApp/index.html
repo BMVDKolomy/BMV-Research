@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body onload="initLinks()">
+<div class="wrapper">
+  <nav>
+
+	<ul class="no-bullets">
+		<li><a href="javascript: location.reload();">Structure</a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+	<p class="section-title">BMV Menu</p>
+	<select style="width: 210px" id="bmvMenu">
+	</select><button onclick="showMenuPage()" id="searchBtn">Go</button>
+	<ul class="no-bullets">
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_AAMVA.pdf')">Menu_AAMVA.pdf</a></li>
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_Admin.pdf')">Menu_Admin.pdf</a></li>
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_B-C.pdf')">Menu_B-C.pdf</a></li>
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_Driver_A-H.pdf')">Menu_Driver_A-H.pdf</a></li>
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_Driver_I-Z.pdf')">Menu_Driver_I-Z.pdf</a></li>
+		<li><a href="javascript: showPdf('./Menu/', 'Menu_F-Z.pdf')">Menu_F-Z.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+
+<!--
+	<p class="section-title">Patterns</p>
+	<select style="width: 210px" id="bmvPattern">
+	</select><button onclick="showPatterns()" id="searchBtn">Go</button>
+	<ul class="no-bullets">
+		<li><a href="#">Patterns.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+-->
+
+	<p class="section-title">Data</p>
+	<ul id="dataId" class="no-bullets">
+	</ul>
+	<div style="height:3px"></div>
+	
+	<p class="section-title">Search</p>
+	<select style="width: 210px" id="search">
+	</select><button onclick="showSearchPage()" id="searchBtn">Go</button>
+	<ul class="no-bullets">
+		<li><a href="javascript: showPdf('./Search/', 'Search_A-B.pdf')">Search_A-B.pdf</a></li>
+		<li><a href="javascript: showPdf('./Search/', 'Search_C-L.pdf')">Search_C-L.pdf</a></li>
+		<li><a href="javascript: showPdf('./Search/', 'Search_M-Z.pdf')">Search_M-Z.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+	<p class="section-title">Entity Associations</p>
+	<select style="width: 210px" id="eaSearch">
+	</select><button onclick="showEASearchPage()" id="searchBtn">Go</button>
+	<ul class="no-bullets">
+		<li><a href="javascript: showPdf('./EASearch/', 'EASearch_A-B.pdf')">EASearch_A-B.pdf</a></li>
+		<li><a href="javascript: showPdf('./EASearch/', 'EASearch_C-I.pdf')">EASearch_C-I.pdf</a></li>
+		<li><a href="javascript: showPdf('./EASearch/', 'EASearch_K-O.pdf')">EASearch_K-O.pdf</a></li>
+		<li><a href="javascript: showPdf('./EASearch/', 'EASearch_P-Z.pdf')">EASearch_P-Z.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+  </nav>
+  <div class="main-wrapper">
+    <main>	
+	
+	
+<!--		<li><a href="javascript: showPdf('./Menu/', 'Menu_AAMVA.pdf')">Menu_AAMVA.pdf</a></li> -->
+	
+	
+		<!-- img id="initImage" src="legacyReDesign.jpg" /-->
+		<img id="initImage" src="BMVLegacyPageStructure.png" />
+		<embed id="schema" src="./Menu/AAMVACDLISHistory.svg" style="display:none" />
+		<embed id="pdfSchema" class="pdf-class" src="./Menu/Menu_AAMVA.pdf" style="display:none" />
+		<div id="textData"></div>
+    </main>
+  </div>
+</div>  
+  </body>
+  
+  <script src="./bmvConstants.js"></script>
+  <script>
+  
+	const initLinks = (name) => {		
+		addData();
+		addOption("search", searchList);
+		addOption("eaSearch", eaSearchList);
+		addOptionJson("bmvMenu",bmvMenu);
+		addOptionJson("bmvPattern",patternMenu);
+	}
+
+	const addOptionJson = (selectElement, optionsJson) => {
+		const select = document.getElementById(selectElement);
+		for (const [key, value] of Object.entries(optionsJson)) {
+			let el = document.createElement("option");
+			el.textContent = value;
+			el.value = key;
+			select.appendChild(el);
+		}
+	}
+
+	const showMenuPage = () => {
+		manageClasses("embed");
+		const select = document.getElementById("bmvMenu");
+		showSchema('./Menu/', select.value + '.svg');
+	}
+
+	const addData = () => {
+		const ulData = document.getElementById("dataId");
+		for (const [key, value] of Object.entries(pageDataStructure)) {
+			let [itemKey, tmp] = Object.entries(value);
+			let li = document.createElement('li');
+			
+			let parentDiv = document.createElement('div');
+			let childDiv = document.createElement('div');
+			let childDiv2 = document.createElement('div');
+			
+			childDiv.innerHTML = "bmv." + itemKey[0] + ".*";
+			parentDiv.appendChild(childDiv);
+			parentDiv.appendChild(createSelectData(itemKey[0], itemKey[1]));
+			parentDiv.appendChild(createSelectBtn(itemKey[0]));
+			
+			li.appendChild(parentDiv);
+			
+			ulData.appendChild(li);
+		}
+	}
+		
+	
+	const createSelectData = (id, itemKey) => {
+		let childSelect = document.createElement('select');
+		childSelect.id = id;
+		childSelect.style.width = "210px";
+		
+		for(const [key, value] of Object.entries(itemKey)) {
+			let el = document.createElement("option");
+			el.textContent = key;
+			el.value = value;
+			childSelect.appendChild(el);
+		}
+		return childSelect;
+	}
+	
+	const createSelectBtn = (id) => {
+		let btn = document.createElement('button');
+		btn.innerHTML = "Go";
+		btn.id="id_"+id;
+		btn.addEventListener("click", showSelectedPageData);
+		return btn;
+	}
+	
+	const showSelectedPageData = (event) => {
+		const selectId = event.target.id.substr(3);
+		const select = document.getElementById(selectId);
+		const arr = select.value.split(',');
+		const selectText = select.options[select.selectedIndex].text
+		
+		const mainDiv = document.getElementById("textData");
+		removeAllChildNodes(mainDiv);
+
+		for(let i=0; i<arr.length; i++) {
+			let legend = "bmv." + selectId + "." + selectText + ".webapp.*";
+			mainDiv.appendChild(addFieldsetElement(legend, arr[i]));		
+		}
+		
+		manageClasses("data");
+		
+	}
+
+	const addFieldsetElement = (legend, contentFile) => {
+		const fieldsetElement = document.createElement("fieldset");
+		const legendElement = document.createElement("legend");
+		const preElement = document.createElement("pre");
+		legendElement.innerHTML = legend;
+		
+		let pageData = atob(pageDataContent[contentFile])
+		preElement.textContent = pageData;
+		
+		fieldsetElement.appendChild(legendElement);
+		fieldsetElement.appendChild(preElement);
+		return fieldsetElement;
+	}
+
+	const addOption = (selectElement, options) => {
+		const select = document.getElementById(selectElement);
+		for(let i = 0; i < options.length; i++) {
+			let opt = options[i];
+			let el = document.createElement("option");
+			el.textContent = opt;
+			el.value = opt;
+			select.appendChild(el);
+		}		
+	}
+	
+	const removeAllChildNodes = (parent) => {
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+	}
+	
+	const initLogoImage = () => {
+		document.querySelector("#initImage").style.visibility  = '';
+	}
+	
+	const manageClasses = (type) => {
+		document.querySelector("#textData").style.display = 'none';
+		document.querySelector("#pdfSchema").style.display = 'none';
+		document.querySelector("#schema").style.display = 'none';
+		document.querySelector("#initImage").style.display = 'none';
+	
+		if (type === "pdf") {
+			document.querySelector("#pdfSchema").style.display = '';
+		} else if (type === "embed") {
+			document.querySelector("#schema").style.display = '';
+		} else if (type === "data") {
+			document.querySelector("#textData").style.display = '';
+		}
+
+	}
+	
+	const showPdf = (path, name) => {
+		manageClasses("pdf");
+		document.getElementById('pdfSchema').src = path + name;
+		return false;
+	}
+	
+	const showSearchPage = () => {
+		manageClasses("embed");
+		const select = document.getElementById("search");
+		showSchema('./Search/', select.value + '.svg');
+	}
+  
+	const showEASearchPage = () => {
+		manageClasses("embed");
+		const select = document.getElementById("eaSearch");
+		showSchema('./EASearch/', select.value + '.svg');
+	}
+
+	const showSchema = (path, name) => {
+		document.getElementById('schema').src = path + name;
+		return false;
+	}
+		
+  </script>
+</html>

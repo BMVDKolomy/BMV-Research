@@ -1,0 +1,53 @@
+"requirements cannot be gathered" kim goodwin
+- Requirements have to be GENERATED
+- Requirements have to be IDEATED
+- Requirements have to be UNCOVERED
+- Requirements are most often NEGOTATED
+
+The idea of "gathering" reduces every person in the room to the role of order taker, which:
+- decreases you ability to help them get to the RIGHT SOLUTION
+- decreases you VALUE to that client or employer
+- decreases what they're willing to PAY you
+
+Poor tools
+- Use cases - aren'1 enough
+- User stories - aren'1 enough
+
+requirements should address success
+The ability to view a data chart onscreen in COMPLETE TASK - Beign able to make sense of what you see and act on it is SUCCESS
+Sharing a deliverable file with a colleague is a COMPLETE TASK - Tracking its version and ensuring there are no duplicate files is SUCCESS
+The ablility to file a tax return online is a COMPLETE TASK - Confidence nothing's missed, the math is right and no chance of audit is SUCCESS
+
+Start early:
+- Their job title (B2B)
+- Their day-to-day responsibilities (B2B0
+- How they use the product now.
+- What other products they use to do the same thing
+- How the Client thinks they use the product
+- What features the Client thinks are important to them
+
+Creating context
+There are tow parts to contextual personas
+	- Develop empathy, Understanding the emotional drivers that affect the user's behavior - 
+	because emotion will trump intellect in almost every situation
+	- Uncover behavioral attributes in the context of multiple situations. What is the user doing?
+	What have they just done? What are they thinking and feeling? How does that affect what they do next?
+	
+tools for creating context
+	- Empathy Mapping uncovers a user's perceptions, influences a goals.
+	- Situational Mapping uncovers situational factors that affect the context of use - along with needs and desired outcomes.
+	- Contextual Use Scenarios expose isues related to flow, constraints, task sequences and related artifacts.
+We use these tools to uncover and validate the relevance and value of out requirements.
+
+all requirements are not created equal. 
+Questions about required data
+WHY do we need each of these data points?
+WHAT do we need to be able to do with this data?
+HOW do we/users benefit from having this data?
+
+requirements are not features
+	Features are solutions
+	Requirements are all about identifying needs
+	
+
+

@@ -1,0 +1,436 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body onload="initLinks()">
+<div class="wrapper">
+  <nav>
+	<p class="section-title">BMV Menu</p>
+	<ul class="no-bullets toggle-section">
+		<li><a href="#"><p>Test1</p></a></li>
+		<li><a href="#"><p>Test2</p></a></li>
+		<li><a href="#"><p>Test3</p></a></li>
+		<li><a href="#"><p>Test4</p></a></li>
+	</ul>
+	<div style="height:3px"></div>
+
+	<p class="section-title">Patterns</p>
+	<ul class="no-bullets toggle-section">
+		<li><a href="#"><p>Test1</p></a></li>
+		<li><a href="#"><p>Test2</p></a></li>
+		<li><a href="#"><p>Test3</p></a></li>
+		<li><a href="#"><p>Test4</p></a></li>
+	</ul>
+	<div style="height:3px"></div>
+
+	<p class="section-title">Data</p>
+	<ul class="no-bullets toggle-section">
+		<li><a href="#"><p>Test1</p></a></li>
+		<li><a href="#"><p>Test2</p></a></li>
+		<li><a href="#"><p>Test3</p></a></li>
+		<li><a href="#"><p>Test4</p></a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+	<p class="section-title">Search</p>
+	<select style="width: 210px" id="search">
+	</select><br/>
+	<button onclick="showSearchPage()" style="width: 210px" id="searchBtn">Show</button>
+	<ul class="no-bullets">
+		<li><a href="javascript: showSchema('./Search/', 'Search_A-B.pdf')">Search_A-B.pdf</a></li>
+		<li><a href="javascript: showSchema('./Search/', 'Search_C-L.pdf')">Search_C-L.pdf</a></li>
+		<li><a href="javascript: showSchema('./Search/', 'Search_M-Z.pdf')">Search_M-Z.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+	<p class="section-title">Entity Associations</p>
+	<select style="width: 210px" id="eaSearch">
+	</select><br/>
+	<button onclick="showEASearchPage()" style="width: 210px" id="searchBtn">Show</button>
+	<!-- button onclick="showPdfDoc()" style="width: 210px" id="searchBtn">PDF Show</button -->
+	<ul class="no-bullets">
+		<li><a href="javascript: showSchema('./EASearch/', 'EASearch_A-B.pdf')">EASearch_A-B.pdf</a></li>
+		<li><a href="javascript: showSchema('./EASearch/', 'EASearch_C-I.pdf')">EASearch_C-I.pdf</a></li>
+		<li><a href="javascript: showSchema('./EASearch/', 'EASearch_K-O.pdf')">EASearch_K-O.pdf</a></li>
+		<li><a href="javascript: showSchema('./EASearch/', 'EASearch_P-Z.pdf')">EASearch_P-Z.pdf</a></li>
+	</ul>
+	<div style="height:3px"></div>
+	
+  </nav>
+  <div class="main-wrapper">
+    <main>
+	<embed id="schema" src="./EASearch/EntityAssoc-1.svg" />
+    </main>
+  </div>
+</div>  
+  </body>
+  <script>
+  
+//width: 700px;
+//height: 1000px;
+  
+	const initLinks = (name) => {
+		const searchList = [
+			"AamvaDriverSearchResults",
+			"AccidentSearchResults",
+			"AdminNonBusinessDay",
+			"AdminTransactionDuplicateSummary",
+			"AvailableReports",
+			"BatchBusinessErrorWarningSearchResults",
+			"BatchJobSearchResults",
+			"BatchScheduleSearchResults",
+			"BmvLocationSearchResult",
+			"CustomerSearchResults",
+			"DriverSearchResults",
+			"EABulkRequestExamSearchResults",
+			"GeneralLedgerAccountSearchResults",
+			"HearingSearchResults",
+			"HybridCustomerSearchResults",
+			"LettersSentSummary",
+			"LettersToSend",
+			"MiscSaleSearchResults",
+			"OrganizationSearchResults",
+			"PosEndOfDaySummary",
+			"PosTransactionSearchResult",
+			"PosTypeSearchResults",
+			"ReconciliationBatchSummary",
+			"ShoppingCartOrderSearchResult",
+			"SubsidiarySearchResults",
+			"TAMIBatchProcessing",
+			"UpdateMfasisDateOfRecord"		
+		];
+		
+		const eaSearchList = [
+			"aamvaConviction_EntityAssoc",
+			"aamvaWithdrawal_EntityAssoc",
+			"accidentCust_EntityAssoc",
+			"address_DriverRoleEntityAssoc",
+			"address_EntityAssoc",
+			"arAccountNumber_EntityAssoc",
+			"attorney_EntityAssoc",
+			"batchjob_EntityAssoc",
+			"bmvBulkRequest_EntityAssoc",
+			"conviction_EntityAssoc",
+			"courtOrderedSuspension_EntityAssoc",
+			"customerOrg_EntityAssoc",
+			"customer_EntityAssoc",
+			"Department_EntityAssoc",
+			"glAccount_EntityAssoc",
+			"glTransaction_EntityAssoc",
+			"iidInstallerSearch_EntityAssoc",
+			"iidInstaller_EntityAssoc",
+			"iidSuspension_EntityAssoc",
+			"inventoryInfo_EntityAssoc",
+			"Lawfirm_EntityAssoc",
+			"linkAddress_EntityAssoc",
+			"medicalReviewExam_EntityAssoc",
+			"medicalReview_EntityAssoc",
+			"mfasisAccount_EntityAssoc",
+			"miscSalePosType_EntityAssoc",
+			"municipality_EntityAssoc",
+			"oiuViolation_EntityAssoc",
+			"ouiSuspension_EntityAssoc",
+			"person_EntityAssoc",
+			"physician_EntityAssoc",
+			"policeOfficer_EntityAssoc",
+			"posTransaction_EntityAssoc",
+			"probation_EntityAssoc",
+			"refundAddress_EntityAssoc",
+			"relatedPosType_EntityAssoc",
+			"sr26_EntityAssoc",
+			"suspension_EntityAssoc"
+		];
+		
+		const pageData = [
+			{
+				"accountsReceivable": {
+					"writeOffOpenItems": ["DisplayOpenLineItems"]
+				}
+			},
+			{
+				"admin": {
+					"batchBusinessError": ["AdminLicenseApplicationStatus","AdminNonBusinessDay","AdminTransactionDuplicateSummary",
+						"BatchBusinessErrorWarningSearchResults","SearchBatchBusinessErrorWarning"],
+					"batchScheduler.createUpdateBatchJob": ["BatchJobDetail"],
+					"batchScheduler.createUpdateBatchSchedule": ["BatchScheduleDetail"],
+					"batchScheduler.searchForBatchJob": ["BatchJobSearchResults","EABatchJobSearchResults"],
+					"batchScheduler.searchForBatchSchedule": ["BatchScheduleSearchResults"],
+					"batchScheduler.viewBatchJobStatus": ["BatchJobStatusSummary"],
+					"batchScheduler.viewBatchScheduleSummary": ["BatchScheduleSummary"],
+					"bmvLocation.createUpdateBmvLocation": ["BmvLocationDetail"],
+					"bmvLocation.createUpdatePosLocation": ["PosLocationDetail"],
+					"bmvLocation.searchForBmvLocation": ["BmvLocationSearchResult"]				
+				}
+			},
+			{
+				"common": {
+					"bmvLocation": ["BMVHome","CashDrawerDataSupport"],
+					"calculateFees": ["BusinessServiceFees"],
+					"calculateRebates": ["BusinessServiceRebates"]
+				},
+			},
+			{
+				"customer": {
+					"createUpdateCustomer": ["AddressDetail","CustomerDetail","DisabledVeteransInformation",
+						"EACustomerAddressSearchResults","PersonDetail","PersonLEPDetails","VeteranHonorsHeld",
+						"VeteranInformationDetail","VeteranStatusDetail"],
+					"createUpdateDriverEdInstructor": ["InstructorMonitorDetail","InstructorMonitorSummary"],
+					"createUpdateAttorney": ["AttorneyDetail","LawFirmDetail"],
+					"createUpdatePoliceOfficer": ["PoliceOfficerDetail"],
+					"searchForAttorney": ["AttorneySearchResults","EAAttorneySearchResults"],
+					"searchForCourt": ["EAMaineCourtSearchResults"],
+					"searchForCustomer": ["CustomerSearchResults","DriverSearchResults","EACustomerSearchResults",
+						"EADriverSearchResults","EAHybridSearchResults","EAOrganizationSearchResults","ExaminerSearchResults",
+						"HybridCustomerSearchResults","OrganizationSearchResults","SubsidiarySearchResults"],
+					"customer.searchForOrgInfo": ["OrganizationInformationSearchResults"],
+					"searchForPoliceOfficer": ["EAPoliceOfficerSearchResults","Policeofficersearchresults"]
+				}
+			},
+			{
+				"driverLicense": {
+					"aamva": ["OutOfStateCdlDataReportedByMail"],
+					"aamvaInquiry": ["CdlisPdpsSsnCheck"],
+					"aamvaMedical": ["AAMVACDLISMedCert","AAMVACDLISMedCertSummary"],
+					"accident": ["AccidentSummary","CreateUpdateAccidentInformation","CreateUpdateAccidentInsuranceFr1",
+						"CreateUpdateAccidentParticipant","CreateUpdateAccidentUnit","EASuspensionAccidentSearchResults"],
+					"createUpdateAccident": ["48HourReport"],
+					"createUpdateDeep": ["DeepDetailInformation","DeepInformation"],
+					"createUpdateDemeritPointCredits": ["DemeritPointCreditDetail","DemeritPointCreditSummary"],
+					"createUpdateDriverCredential": ["DriverCredentialHistory","DriverLicenseInformation","IdCardDetail","TemporaryLicenseDetail"],
+					"createUpdateDriverHistoryNote": ["DriverHistoryNoteDetail","DriverHistoryNoteSummary"],
+					"createUpdateDriverInformation": ["CreateUpdateDriverInformation","DriverLicenseEndorsements","DriverLicenseEndorsementsDetail",
+						"DriverLicenseRestriction","DriverLicenseRestrictionsDetail","ImageRetrieval","","LegalPresenceDetail","PatriotActDetail",
+						"PersonalAttributes"],
+					"createUpdateDriverSuspension": ["AdminConvictionSuspensionDetail","CmvSuspensionDetail","CourtOrderedSuspensionDetail",
+						"DriverRegistrantReinstatementFeeDetail","DriverSuspensionRestorationRequirements","DriverSuspensionSummary",
+						"EAConvictionSearchResults","EAConvictionSearchResultsCmvType","EAConvictionSearchResultsFiveYears",
+						"EAConvictionSearchResultsFpeType","EAConvictionSearchResultsMisFact","EAConvictionSearchResultsOuiType",
+						"EAConvictionSearchResultsTenYears","EAOUIViolationSearchResults","EAProbationSearchResults","EASuspensionSearchResults",
+						"EASuspensionSearchResultsThreeYears","FinancialResponsibilitySuspensionDetail","FtaFpfSuspensionDetail","HabitualOffenderSuspensionDetail",
+						"HORevocationSearchResults","JudgmentSuspensionDetail","JudgmentSuspensionSearchResults","MedicalSuspensionDetail",
+						"OuiSuspensionDetail","ProbationSuspensionDetail"],		
+					"createUpdateInstructionPermit": ["InstructionPermitDetail"],
+					"createUpdateFAPTable": ["FapTableDiagnosisDetail","FapTableProfileDetail","FapTableSummary"],
+					"createUpdateMedicalReview": ["EAMedicalReviewSearchResults","LicenseCancellationDetail","MedicalAdverseReportDriving",
+						"MedicalConditionDetail","MedicalDiagnosisFapInformation","MedicalEyeEvaluationRequest","MedicalPersonnelDetail",
+						"MedicalPersonnelFacilityDetail","MedicalReviewDetail","MedicalReviewSummary","VisionReviewDetail"],		
+					"common": ["AAMVAInquiry","DigitalImageAccess"],
+					"conviction.convictionsSummary": ["Convictions"],
+					"conviction.createUpdateConvictionInformation": ["AamvaReportConvictionStatus","ConvictionDetail","CourtOrderedSuspensionSearchResults",
+						"EACdlisSuspensionSearchResults"],
+					"conviction.createUpdateProbation": ["CreateUpdateProbation","ProbationDetail"],
+					"conviction.ouiConvictionList": ["ConvictionList"],
+					"exam.createUpdateExamApplication": ["ExamApplication"],
+					"exam.createUpdateExaminerSchedule": ["ExaminerSchedule","ExaminerScheduleDetail"],
+					"exam.createUpdateExamResult": ["ExamResults","ExamResultsSummary","TrackExams","TrackExamsScan"],
+					"exam.createUpdateExamSchedule": ["BulkExamScheduleSummary","EABulkRequestExamSearchResults","EAExamDriverLicenseApplicationSearchResults",
+						"EAExamLocationSearchResults","EAExamSelectionSearchResults","ExamSchedule","ExamSelectionList"],
+					"getDigimarcWorkQueue": ["DigimarcWorkQueue"],
+					"mergeDrivers": ["MergeDrivers"],
+					"ouiViolation.createUpdateOuiViolation": ["OuiViolationDetail"],
+					"ouiViolation.ouiViolationSummary": ["OuiViolationSummary"],
+					"searchForAamvaDriver": ["AamvaDriverSearchResults"],
+					"searchForAccident": ["AccidentSearchResults","EAAccidentSearchResults"],
+					"searchForMedicalCondition": ["MedicalConditionSearchResults"],
+					"searchForOuiSuspension": ["EAOuiSuspensionSearchResults"],
+					"searchForPhysician": ["EAMedicalPersonnel","EAMedicalPersonnelFacility"],
+					"searchForSuspension": ["EASuspensionHearingSearchResults"],
+					"suspension.ignitionInterlock": ["DriverIIDDetail","DriverIIDPetition","DriverIIDPetitionSummary","IIDInstallerDetail",
+						"IIDVendorDetail","IIDVendorsAndInstallers"],
+					"suspension.ignitionInterlock.searchForIidInstaller": ["EAIIDInstallerSearchResults","IIDInstallerSearchResults"],
+					"suspension.ignitionInterlock.searchForIidSuspension": ["EAIidSuspensionSearchResults"],
+					"suspensionConvictionAssoc": ["EACdlisConvictionSearchResults"],
+					"suspension.updateAamvaReportStatus": ["AamvaReportSuspensionStatus"],
+					"viewCdlisPdpsStatusHistory": ["ViewCdlisPdpsStatusHistory","ViewCdlisPdpsStatusHistoryDetail"],
+					"viewCdlisPdpsTransactionHistory": ["ViewCdlisPdpsTransactionHistory","ViewCdlisPdpsTransactionHistoryDetail"],
+				}
+			},
+			{
+				"frameworks": {
+					"presentation": ["CashPayment","CheckPayment","CourtCodes","CredentialSearchResults",
+						"CreditDebitCardPayment","DeviceCreditDebitCardPayment","EftPayment","ForeignCheckPaymentDetail",
+						"GeneralLedgerTransactions","HypercomPayment","MiscSaleItemDetail","StateCode","TravelersCheckPayment",
+						"ViolationCodes","VoucherPayment"]
+				}
+			},
+			{
+				"generalFinance": {
+					"createCashReconciliationReport": ["ReconciliationBatchDetail","ReconciliationBatchSummary","ReconciliationSummaryAndDestination"],
+					"createUpdateAuditSchedule": ["AdminMonitorSummary"],
+					"createUpdateGeneralLedgerAccount": ["GeneralLedgerDetail"],
+					"processTamiUpdate": ["TAMIBatchProcessing"],
+					"searchForGeneralLedgerAccount": ["EAGeneralLedgerAccountSearchResults","GeneralLedgerAccountSearchResults"],
+					"searchForMfasisAccount": ["EAMfasisAccountSearchResults"],
+					"searchForProtestedCheck": ["PosCheckNumberSearchResults"],
+					"updateMfasisDateOfRecord": ["UpdateMfasisDateOfRecord"]
+				}
+			},
+			{
+				"hearing": {
+					"createUpdateHearing": ["ContinuanceOfHearingDetail","CreateUpdateHearing","HearingContinuance",
+						"HearingDetail","HearingScheduleHistory"],
+					"createUpdateStayOfSuspension": ["StayOfSuspensionDetail"],
+					"searchForHearing": ["HearingSearchResults"]
+				}
+			},
+			{
+				"insurance": {
+					"createUpdateSr22_24_26Filing": ["EASR26FilingSearchResults","Sr222426FilingSummary","Sr22FilingDetail",
+						"Sr24FilingDetail","Sr26FilingDetail"],
+					"createUpdateSr22Requirement": ["Sr22RequirementDetail","Sr22RequirementSummary"]
+				}
+			},
+			{
+				"interfaces": {
+					"aamva.cdlisHistory": ["AAMVACDLISHistory","AamvaCdlisSuspensionLinkDetail","AamvaCdlisSuspensionSummary"],
+					"aamva.common.transactions": ["AAMVATransactionViewer"],
+					"aamva.generateAamvaMessage": ["AAMVADriverConvictions","AAMVADriverCredential","AAMVADriverTransactions",
+						"AAMVADriverWithdrawals","GenerateAamvaTransaction"],
+					"aamva.maintenance.resolveError": ["Aamvainterfaceerrordetail","Aamvainterfaceerrorsummary"],
+					"aamva.maintenance.updateParameter": ["AAMVAInterfaceParameters"],
+					"aamva.maintenance.viewStatus": ["Aamvainterfacestatus","Aamvainterfacestatusdetail"],
+					"aamva.pdps": ["AAMVADigitalImageViewer"]
+				}
+			},
+			{
+				"inventory": {
+					"searchStorageLocation": ["EAStorageLocationSearchResults"],
+				}
+			},
+			{
+				"lettersAndReports": {
+					"common": ["SystempushLetterReport"],
+					"letters": ["AvailableLetters","CorrespondenceComments","LetterParameterDetail","SystempushLettersCreatedToday"],
+					"reports": ["AvailableReports","Onlinereportssummary","ReportRequestDetail"],
+					"searchForLetters": ["LettersSentSummary","LettersToSend"]
+				}
+			},
+			{
+				"pos": {
+					"createEndDayReport": ["EnterReportParameters"],
+					"createUpdateMiscellaneousSale": ["MiscellaneousSaleDetail","MiscSaleMultiLineItemDetail"],
+					"createUpdatePosTransaction": ["CashDrawerAdjustmentDetail","CreateUpdateCreditDebitCardPayment","CreateUpdateDeviceCreditDebitCardPayment",
+						"CreateUpdateEAPosTransactionSearchResults","PosDocumentSummary","PosEndOfDayDetail","PosEndOfDaySummary",
+						"POSReceiptProcessing","PosSplitFeeMaintenance","PosTransactionDetail","ShoppingCartOrderCheckout"],
+					"createUpdatePosType": ["CreateUpdatePosType"],
+					"createUpdateShoppingCartItem": ["LineItemDetail"],
+					"createUpdateShoppingCartOrder": ["ShoppingCartOrderDetail","ShoppingCartView"],
+					"miscellaneousSaleSummary": ["MiscellaneousSaleSummary"],
+					"searchForMiscellaneousSale": ["MiscSaleSearchResults"],
+					"searchForPosTransaction": ["EAPosTransactionSearchResults","EARelatedPosTransactionSearchResults","PosTransactionSearchResult"],
+					"searchForPosType": ["EAFeeStructureSearchResults","EAMiscSalePosType","EAPosTypeSearchResults","EAPvPosTypeSearchResults","PosTypeSearchResults"],	
+					"searchForShoppingCartOrder": ["ShoppingCartOrderSearchResult","ShoppingCartOrderSummary"]
+				}	
+			},
+			{
+				"registration": {
+					"createUpdateClassCodeChecklist": ["AssociateChecklistValues"]
+				}
+			},
+			{
+				"schedule": {
+					"createUpdateAvailabilityConstraint": ["CustomerAvailabilityDetail","CustomerAvailabilitySummary"],
+				}
+			}
+		];
+
+//		pageData.forEach(item => {console.log(item.key)});
+
+		for (const [key, value] of Object.entries(pageData)) {
+			let [itemKey, tmp] = Object.entries(value)
+			console.log(itemKey[0]);
+			
+			for(const [key1, value1] of Object.entries(itemKey[1])) {
+				console.log("> " + key1);
+				
+//				value1.forEach(item -> console.log(item.key));							
+//				console.log(">> " + value1.length);
+
+				for(let i=0; i<value1.length; i++) {
+					console.log(">> " + value1[i]);
+				}
+
+			}
+			
+		}
+
+var base_url = window.location.origin;
+var host = window.location.host;
+var pathArray = window.location.pathname.split( '/' );
+
+		console.log(base_url);
+//		console.log(host);
+		console.log(pathArray);
+
+
+pathArray[pathArray.length-1] = "Data";
+
+let ttt = pathArray.join('/');
+				
+var fileName = base_url + ttt + "/AAMVACDLISHistory.txt";
+console.log(fileName);
+
+readTextFile(fileName)
+
+
+
+		addOption("search", searchList);
+		addOption("eaSearch", eaSearchList);
+			
+	}
+
+
+//readTextFile("file:///C:/your/path/to/file.txt");
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+	
+	
+	
+	
+	const addOption = (selectElement, options) => {
+		const select = document.getElementById(selectElement);
+		for(let i = 0; i < options.length; i++) {
+			let opt = options[i];
+			let el = document.createElement("option");
+			el.textContent = opt;
+			el.value = opt;
+			select.appendChild(el);
+		}		
+	}
+	
+	const showSearchPage = () => {
+		const select = document.getElementById("search");
+		showSchema('./Search/', select.value + '.svg');
+	}
+  
+	const showEASearchPage = () => {
+		const select = document.getElementById("eaSearch");
+		showSchema('./EASearch/', select.value + '.svg');
+	}
+
+	const showSchema = (path, name) => {
+		document.getElementById('schema').src = path + name;
+		return false;
+	}
+		
+  </script>
+</html>

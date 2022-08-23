@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  font: 15px 'Helvetica', sans-serif;
+  display: flex;
+}
+
+nav {
+  height: 200vh;
+  box-sizing: border-box;
+  min-width: 200px;
+  padding: 1.1em 1em 1em 1em;
+  background: #334;
+  color: white;
+}
+
+.section-title {
+	margin: 0 -10px 0 -10px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background-color: #4b4b9c;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	padding-top: 1px;
+	padding-bottom: 1px;	
+}
+
+nav ul li a p {
+	margin: auto;
+}
+
+.ea-fontsize {
+	font-size: small;
+}
+
+nav ul li {
+	padding-top: 5px;
+}
+
+nav ul li a:hover {
+	background-color: #717191;
+}
+
+nav ul li a:hover p {
+	background-color: #717191;
+}
+
+.toggle-section {
+	display: none;
+}
+
+.main-wrapper {
+  height: 200vh;
+  overflow: scroll;
+  background: #f0f0f0;
+  padding: 2em;
+}
+
+main {
+  width: 100%;
+  padding: 1em 2em;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #ccc;
+}
+
+a {
+  color: white;
+}
+
+.pdf-class {
+	width: 860px;
+    height: 700px;
+}
