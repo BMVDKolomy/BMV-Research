@@ -1,0 +1,50 @@
+Tooltips:
+    
+    Coloring
+    <a href="#" data-toggle="tooltip" data-placement="bottom"
+       title="" data-original-title="Tooltip on bottom"
+       class="red-tooltip">Tooltip on bottom</a>
+
+    .red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+    .red-tooltip + .tooltip > .tooltip-arrow { border-bottom-color:#f00; }
+
+    $(document).ready(function(){
+        $("a").tooltip();
+    });
+
+Switcher (dirty page indicator):
+    https://gitbrent.github.io/bootstrap4-toggle/
+
+
+	a. Cards
+	b. Section represent modules (needs to define)
+	c. Page naming (needs to define)
+	d. Fully responsive (show menu)
+	e. Header (menu duplication)
+	d. Footer User/Dev explanation
+	c. Icons Login/Location/Configuration
+	f. Configuration
+		f1. System descripion
+		f2. Color schema
+		f3. Forn Size
+	g. Login
+	h. Locaton
+	i. Configuration
+	j. Go Home
+	k. Help system (short description)
+
+2. 	Any page structure
+	a. Responsive (show Driver record)
+	b. Under ? help system
+	c. Color of V shows dirty/clean (possibility to ignore)
+	d. Perform Action
+	e. Breadcrubms
+	f. Search
+	g. Report/Letter
+	h. Shopping Card
+	
+http://10.10.45.24:8080/newbmv/template-home.html
+http://10.10.45.24:8080/newbmv/template-person.html
+http://10.10.45.24:8080/newbmv/template-address.html
+http://10.10.45.24:8080/newbmv/template-legal.html
+	

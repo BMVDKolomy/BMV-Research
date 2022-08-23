@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="BMV Project">
+        <meta name="author" content="Dmitry Kolomyitsev">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+        <link rel="stylesheet" href="fontawesome/css/solid.min.css">
+
+        <link rel="stylesheet" href="css/customStyles2.css">
+
+        <title>BMV Combined Page</title>
+    </head>
+    <body>
+
+
+        <header>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" title="BMV Home" style="font-size: 2em; color:white" href="#" onClick="goHome();return false;">
+            <i id="bmvLetter" class="fas fa-car"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Person & Organization -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-1" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="Person & Organization" aria-expanded="false">Person</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-1">
+                    <a href="template-person.html" class="dropdown-item" title="Short description...(Person Detail)">Person</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Person Veteran Summary)">Veteran</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Organization Detail)">Organization</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Customer Conviction Summary)">Conviction</a>
+                </div>
+            </li>
+
+            <!-- Driver -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-2" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="Driver" aria-expanded="false">Driver</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-2">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Credential History)">Credential History</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver DEEP Summary)">DEEP Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Demerit Summary)">Demerit Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver History Note Summary)">History Note</a>
+                    <a href="template-driver.html" class="dropdown-item" title="Short description... (Driver Information)">Information</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Medical Review Summary)">Medical Review</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver OUI Violation Summary)">OUI Violation</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Probation Summary)">Probation</a>
+                </div>
+            </li>
+    
+            <!-- Suspension -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-3" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="Suspension" aria-expanded="false">Suspension</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-3">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver SR22 24 26 Filing Summary)">SR22/24/26 Filing</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver SR22 Requirement Summary)">SR22 Requirement</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Suspension IID Petition Summary)">IID Petition</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Suspension Reinstatement Fee)">Reinstatement Fee</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Suspension Restoration Requirements)">Restoration Requirements</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Suspension Summary)">Summary</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="Exam & Accident & Hearing" aria-expanded="false">Exam-Acc-Hear</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-4">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Accident Detail)">Accident Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Accident Summary)">Accident Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Exam Bulk Schedule Summary)">Exam Bulk Schedule</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Exam Results Summary)">Exam Results</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Exam Summary)">Exam Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Hearing Detail)">Hearing Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Driver Hearing Summary)">Hearing Summary</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="POS & Finance" aria-expanded="false">Finance</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-4">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS End Of Day Summary)">End Of Day Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS Sale Detail)">Sale Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS Shopping Cart Order Detail)">Order Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS Shopping Cart Order Summary)">Order Summary</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS Transaction Detail)">Transaction Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Finance Cash Reconciliation Batch Summary)">Cash Reconciliation</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Finance General Ledger Detail)">General Ledger</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="Admin & Batch" aria-expanded="false">Admin</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-4">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (POS Type Maintenance)">POS Type</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (TAMI Batch Processing)">TAMI</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Batch Job Detail)">Job Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Batch Schedule Detail)">Schedule Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Admin IID Vendors and Installers)">IID Vendors</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Admin Location Detail)">Location</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Admin Non Business Day)">Non-Business Day</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Admin Search Batch Business Error Detail)">Business Error Detail</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Admin Transaction Duplicate Summary)">Transaction Duplicate</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Letters Request Summary)">Letters Request</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (Letters Sent Summary)">Letters Sent</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" 
+                    data-toggle="dropdown" aria-haspopup="true" 
+                    title="AAMVA" aria-expanded="false">AAMVA</a>
+                <div class="dropdown-menu dropdown-secondary" 
+                    aria-labelledby="navbarDropdownMenuLink-4">
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (AAMVA CDLIS History)">CDLIS History</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (AAMVA CDLIS OutOfState)">CDLIS OutOfState</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (AAMVA CDLIS Suspension Summary)">CDLIS Suspension</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (AAMVA Interface Error Summary)">Interface Error</a>
+                    <a href="template-under.html" class="dropdown-item" title="Short description... (AAMVA Transaction Generator)">Transaction Generator</a>
+                </div>
+            </li>
+
+          </ul>
+          <form class="form-inline">
+
+              <a href="#" id="bmvLoginLink" onClick="bmvLogin();return false;" title="Login" style="font-size: 1.5em; color:white" class="px-4">
+                <i id="bmvLogin" class="fas fa-user-times"></i>
+              </a>
+
+              <a href="#" id="bmvLocationLink" onClick="bmvLocation();return false;" title="Set location" style="font-size: 1.5em; color:white" class="px-4">
+                <i id="bmvLocation" class="fas fa-map-marker-alt"></i>
+              </a>
+              
+              <a href="#" title="Configuration" onClick="bmvConfig();return false;" style="font-size: 1.5em; color:white" class="px-4">
+                <i class="fas fa-tools"></i></a>
+          </form>
+        </div>
+      </nav>            
+    </header>
+
+ <!-- Begin page content -->
+ <main role="main" class="container">
+
+
+
+
+<!-- ************************** -->
+<!-- ********   modal  ******** -->
+<!-- ************************** -->
+
+<!-- Login modal -->
+        <div class="modal" id="myLogin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto"><i class="fas fa-user-cog"></i> Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row mx-auto">
+                        <div class="col-sm-12 mb-2">
+                                <input type="text" disabled="true" id="login" class="fadeIn second" name="login" placeholder="login">    
+                        </div>
+                        <div class="col-sm-12">
+                                <input type="password" disabled="true" id="password" class="fadeIn third" name="password" placeholder="password">    
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Login</button>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+<!-- Location modal -->
+        <div class="modal" id="myLocation">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto"><i class="fas fa-search-location"></i> Set Location</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row mx-auto">
+                        <div class="col-4 mb-2">
+                            Location:
+                        </div>
+                        <div class="col-8 mb-2">
+                                <select name="selec1" id="select1">
+                                        <option value="200000021">INFORMATION SERVICES</option>
+                                        <option value="100000142">AUGUSTA BRANCH</option>
+                                        <option value="100000143">BANGOR BRANCH</option>
+                                        <option value="100000144">CALAIS BRANCH</option>
+                                        <option value="100000145">CARIBOU BRANCH</option>
+                                    </select>
+                        </div>
+                        <div class="col-4 mb-2">
+                                Cash Drawer:
+                            </div>
+
+                        <div class="col-8 mb-2">
+                            <select name="selec2" id="select2">
+                                <option value="200000021">IS07 - UNASSIGNED</option>
+                                <option value="200000021">IS08 - UNASSIGNED</option>
+                                <option value="200000021">IS09 - UNASSIGNED</option>
+                                <option value="200000021">IS10 - UNASSIGNED</option>
+                                <option value="100000142">AUGU01 - UNASSIGNED</option>
+                                <option value="100000142">AUGU02 - UNASSIGNED</option>
+                                <option value="100000142">AUGU03 - UNASSIGNED</option>
+                                <option value="100000142">AUGU04 - UNASSIGNED</option>
+                                <option value="100000142">AUGU05 - UNASSIGNED</option>                                    
+                                <option value="100000143">BNGR01 - UNASSIGNED</option>
+                                <option value="100000143">BNGR02 - UNASSIGNED</option>
+                                <option value="100000143">BNGR03 - UNASSIGNED</option>                                    
+                                <option value="100000144">CALA01 - UNASSIGNED</option>
+                                <option value="100000144">CALA02 - UNASSIGNED</option>
+                                <option value="100000144">CALA03 - UNASSIGNED</option>
+                                <option value="100000144">CALA04 - UNASSIGNED</option>
+                                <option value="100000144">CALA05 - UNASSIGNED</option>
+                                <option value="100000145">CARI01 - UNASSIGNED</option>
+                                <option value="100000145">CARI02 - UNASSIGNED</option>
+                                <option value="100000145">CARI03 - UNASSIGNED</option>
+                                </select>                                        
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="setLocationBtn" type="button" class="btn btn-danger" data-dismiss="modal">Select</button>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+<!-- Configuration modal -->
+        <div class="modal" id="myConfiguration">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto"><i class="fas fa-toolbox"></i> Configuration</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-1 my-3"></div>
+                        <div class="shadow col-10 my-3">
+                            <div class="row">
+                                <h5 class="col-12 mb-2">Config Data</h5>
+                                <div class="col-4 mb-2">Environment:</div>
+                                <div class="col-8 mb-2"><span id="environmentConfigId" class="font-weight-bold"></span></div>
+                                <div class="col-4 mb-2">Database:</div>
+                                <div class="col-8 mb-2"><span id="databaseConfigId" class="font-weight-bold"></span></div>
+                                <div class="col-4 mb-2">Version</div>
+                                <div class="col-8 mb-2"><span id="versionConfigId" class="font-weight-bold"></span></div>
+                            </div>
+                        </div>
+                        <div class="col-1 my-3"></div>
+
+                        <div class="col-1 my-3"></div>
+                        <div class="shadow col-10 my-3">
+                            <div class="row">
+                                <h5 class="col-12">User Data</h5>
+                                <div class="col-4 mb-2">Login:</div>
+                                <div class="col-8 mb-2"><span id="loginConfigId" class="font-weight-bold"></span></div>
+                                <div class="col-4 mb-2">Location:</div>
+                                <div class="col-8 mb-2"><span id="locationConfigId" class="font-weight-bold"></span></div>
+                                <div class="col-4 mb-2">Drawer:</div>
+                                <div class="col-8 mb-2"><span id="draverConfigId" class="font-weight-bold"></span></div>
+                                <div class="col-4 mb-2">Current Cart:</div>
+                                <div class="col-8 mb-2"><span id="currentCartConfigId" class="font-weight-bold"></span></div>
+                            </div>
+                        </div>
+                        <div class="col-1 my-3"></div>
+
+                        <div class="col-1 my-3"></div>
+                        <div class="shadow col-10 my-3">
+                            <div class="row">
+                                <h5 class="col-12">Misc. Data</h5>
+                                <div class="col-4 mb-2">Color Shema:</div>
+                                <div class="col-8 mb-2">
+                                    <select>
+                                        <option value="1">Black</option>
+                                        <option value="2">Blue</option>
+                                        <option value="3">Green</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 mb-2">Font Size:</div>
+                                <div class="col-8 mb-2">
+                                    <select>
+                                        <option value="1">Small</option>
+                                        <option value="2">Normal</option>
+                                        <option value="3">Large</option>
+                                        <option value="4">X-Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1 my-3"></div>
+
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+<!-- Search Modal -->
+<div class="modal" id="mySearch">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title mx-auto"><i class="fas fa-users"></i> Search</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+
+                <div class="row">
+                
+                        <!-- Search -->                    
+                        <div class="col-12 shadow mb-3">
+                                <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" data-toggle="tab" href="#tab1">Driver</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" data-toggle="tab" href="#tab2">Lic./History</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" data-toggle="tab" href="#tab3">SSN</a>
+                                        </li>
+                                      </ul>
+                                    
+                                      <!-- Tab panes -->
+                                      <div class="tab-content">
+                                        <div id="tab1" class="container tab-pane active"><br>
+                <form>
+                    <div class="form-row">
+                        
+                        <div class="form-group col-md-3">
+                            <input title="First Name" type="text" class="form-control" placeholder="First Name"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input title="Middle Name" type="text" class="form-control" placeholder="Middle Name"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input title="Last Name" type="text" class="form-control" placeholder="Last Name"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input title="Suffix" type="text" class="form-control" placeholder="Suffix"/>
+                        </div>
+                
+                        <div class="form-group col-md-3">
+                            <input title="Birth Date" type="text" class="form-control" placeholder="Birth Date"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <select title="Sex" id="searchSexId" class="form-control">
+                                <option selected>Sex</option>
+                                <option>Female</option>
+                                <option>Male</option>
+                                <option>Non-Binary</option>
+                            </select>
+                
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input title="City" type="text" class="form-control" placeholder="City"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <select title="State or Province" id="searchStateId" class="form-control">
+                                <option selected>State/Province</option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                            </select>
+                                
+                        </div>
+                
+                        <div class="form-group col-md-3">
+                            <input title="Zip" type="text" class="form-control" placeholder="Zip"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input title="Extended Zip" type="text" class="form-control" placeholder="Zip Extension"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <select title="Soundex" id="searchSoundexId" class="form-control">
+                                <option>Soundex</option>
+                                <option>Yes</option>
+                                <option selected>No</option>
+                            </select>
+                        
+                        </div>
+                        <div class="form-group col-md-3">
+                                <select title="All Customers" id="searchAllId" class="form-control">
+                                    <option>All Customers</option>
+                                    <option selected>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            
+                        </div>
+                    </div>
+                    <div class="text-right mb-2">
+                        <button type="submit" class="btn btn-success">Search</button>
+                        <button class="btn btn-warning">Clear</button>
+                    </div>
+                </form>
+                                        </div>
+                
+                                        <div id="tab2" class="container tab-pane fade"><br>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input title="ME Lic./History Number" type="text" class="form-control" placeholder="ME Lic./History Number"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select title="All Customers" id="searchAllId" class="form-control">
+                            <option>All Customers</option>
+                            <option selected>Yes</option>
+                            <option>No</option>
+                            </select>
+                        </div>                        
+                    </div>
+                    <div class="text-right mb-2">
+                        <button type="submit" class="btn btn-success">Search</button>
+                        <button class="btn btn-warning">Clear</button>
+                    </div>        
+                </form>                            
+                                        </div>
+                
+                                        <div id="tab3" class="container tab-pane fade"><br>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input title="Social Security" type="text" class="form-control" placeholder="SSN"/>
+                        </div>
+                    </div>
+                    <div class="text-right mb-2">
+                        <button type="submit" class="btn btn-success">Search</button>
+                        <button class="btn btn-warning">Clear</button>
+                    </div>    
+                </form>                            
+                                        </div>
+                                      </div>
+                                    </div>
+                
+                        <!-- Result -->                    
+                        <div class="col-12">
+                
+                <table class="table table-striped">
+                <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>License</th>
+                    <th>Status</th>
+                    <th class="d-none d-md-table-cell">City</th>
+                    <th class="d-none d-md-table-cell">State</th>
+                    <th class="d-none d-md-table-cell">Exp.Year</th>
+                    <th class="d-none d-md-table-cell">DOT</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr> 
+                        <td><a href="#">DUCK, DAFFY D</a></td>
+                        <td>01/01/1985</td>
+                        <td>3482336</td>
+                        <td>A</td>
+                        <td class="d-none d-md-table-cell">AUGUSTA</td>
+                        <td class="d-none d-md-table-cell">ME</td>
+                        <td class="d-none d-md-table-cell">2020</td>
+                        <td class="d-none d-md-table-cell"></td>
+                    </tr>
+                    <tr>        
+                        <td><a href="#">DUCK, DOTTIE F</a></td>
+                        <td>06/28/1983</td>
+                        <td>5668335</td>
+                        <td>V</td>
+                        <td class="d-none d-md-table-cell">WESTBROOK</td>
+                        <td class="d-none d-md-table-cell">ME</td>
+                        <td class="d-none d-md-table-cell">2017</td>
+                        <td class="d-none d-md-table-cell"></td>
+                    </tr>
+                    <tr>        
+                        <td><a href="#">MOUSE, MICKEY</a></td>
+                        <td>11/01/2000</td>
+                        <td>8986363</td>
+                        <td>A</td>
+                        <td class="d-none d-md-table-cell">AUGUSTA</td>
+                        <td class="d-none d-md-table-cell">ME</td>
+                        <td class="d-none d-md-table-cell">2024</td>
+                        <td class="d-none d-md-table-cell"></td>
+                    </tr>
+                    <tr>        
+                        <td><a href="#">MOUSE, MINI</a></td>
+                        <td>11/01/1964</td>
+                        <td>2300302</td>
+                        <td>S</td>
+                        <td class="d-none d-md-table-cell">MY TOWN</td>
+                        <td class="d-none d-md-table-cell">ME</td>
+                        <td class="d-none d-md-table-cell"></td>
+                        <td class="d-none d-md-table-cell"></td>
+                    </tr>                
+                </tbody>
+                
+                </table>
+                
+                        </div>    
+                
+                
+                
+                    </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<!-- Dummy modal -->
+<div class="modal" id="myDummy">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 id="dummyReport" class="modal-title mx-auto"><i class="fas fa-list"></i> Reports</h4>
+          <h4 id="dummyLetter" class="modal-title mx-auto"><i class="fas fa-envelope"></i> Letters</h4>
+          <h4 id="dummyCheckout" class="modal-title mx-auto"><i class="fas fa-hand-holding-usd"></i> Checkout</h4>
+          <h4 id="dummyHelp" class="modal-title mx-auto"><i class="fas fa-question-circle"></i> Help</h4>
+          <h4 id="dummyReset" class="modal-title mx-auto"><i class="fas fa-broom"></i> Reset</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p id="textReport">Dummy Report Page. Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt in sapiente ipsum soluta est hic ducimus deleniti molestiae totam corrupti?</p>
+          <p id="textLetter">Dummy Letter Page. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores delectus suscipit magnam odit quo non officia cum illum quibusdam obcaecati.</p>
+          <p id="textCheckout">Dummy Checkout for Cart No: ######### Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro assumenda aperiam, possimus blanditiis ut tempore quo repudiandae reprehenderit dolore.</p>
+          <p id="textHelp">Dummy Help Page. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid dicta quia explicabo, repellendus alias non velit molestiae earum iste fuga.</p>
+          <p id="textReset">Dummy: If Current Page is dirty - RESET DATA. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti in obcaecati ratione nam eum deserunt nesciunt pariatur distinctio officia quisquam.</p>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ************************** -->
+<!-- ****** recorfInfo  ******* -->
+<!-- ************************** -->
+
+<!-- RecordInfo -->
+<div class="row mt-4">
+
+<div class="col-12 bg-secondary text-white">
+    <div class="row">
+        <div class="col-11">
+            <h4>
+                <span id="Page451-title">Person Detail</span>
+            </h4>
+        </div>
+        <div class="col-1">
+            <div class="row">
+                <div class="col-6 mt-1">
+                    <a href="#" class="text-white" id="bmvHelpLink" onClick="bmvDummy('help');return false;" title="Help">
+                        <i class="fas fa-question-circle"></i>
+                    </a> 
+                </div>
+                <div class="col-6 mt-1">
+                    <a href="#" class="text-white" id="bmvHelpLink" onClick="bmvDummy('reset');return false;" title="Reset Data">
+                        <span><i class="fas fa-check"></i></span>
+                        <!-- <span><i class="fas fa-check text-danger"></i></span> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="col-12 shadow d-none d-sm-inline">
+    
+          <div class="row border-bottom mb-2">
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+              <span>Name:</span>
+              <a href="template-person.html" class="font-weight-bold">DAFFY D DUCK</a>
+            </div>
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+              <span>DOB:</span>
+              <span class="font-weight-bold">01/01/1985</span>
+            </div>
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+                <span>Driver Status:</span>
+                <span class="font-weight-bold">Active</span>
+            </div>
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+              <span>CDL Status:</span>
+              <span class="font-weight-bold">Active</span>
+            </div>
+          </div>
+    
+          <div class="row border-bottom mb-2">
+            <div class="col-lg-6 col-md-12 d-none d-sm-inline">
+              <span>Address:</span>
+              <a href="template-address.html" class="font-weight-bold">29 State House Station AUGUSTA ME 04330</a>
+            </div>
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+                <span>Lic.History Number:</span>
+                <a href="template-driver.html" class="font-weight-bold">3482336</a>
+            </div>
+            <div class="col-lg-3 col-md-6 d-none d-sm-inline">
+                <span>Legal Presense:</span>
+                <a href="template-legal.html" class="font-weight-bold">Citizen</a> 
+            </div>
+          </div>
+    
+          <div class="row border-bottom mb-2">
+            <div class="col-4 d-none d-sm-inline">
+              <span>Class:</span>
+              <span class="font-weight-bold"></span>
+            </div>
+            <div class="col-4 d-none d-sm-inline">
+              <span>Endorsements:</span>
+              <span class="font-weight-bold">N</span>
+            </div>
+            <div class="col-4 d-none d-sm-inline">
+              <span>Restrictions:</span>
+              <span class="font-weight-bold">B,X</span>
+            </div>
+          </div>
+      
+          <div class="row mb-2">
+              <div class="col-12 d-none d-sm-inline">
+                <span>AAMVA:</span>
+                <span class="font-weight-bold mr-2">05092019</span>
+                <span class="font-weight-bold mr-2">Yes - CDL</span>
+                <span class="font-weight-bold mr-2">05092019</span>
+                <span class="font-weight-bold mr-2">Yes - Lic</span>
+                <span class="font-weight-bold mr-2">01052017</span>
+                <span class="font-weight-bold mr-2">OK</span>
+              </div>
+          </div>
+    
+        </div>
+    
+        <div class="col-12 d-block d-sm-none">
+            <div class="row">
+                <a href="template-person.html" class="btn btn-primary font-weight-bold col-12 mb-2">DAFFY D DUCK</a>
+                <a href="template-address.html" class="btn btn-primary font-weight-bold col-12 mb-2">29 State House Station AUGUSTA ME 04330</a>
+                <a href="template-driver.html" class="btn btn-primary font-weight-bold col-12 mb-2">3482336</a>
+            </div>
+         </div>
+
+<!-- ************************** -->
+<!-- **** Perform Action  ***** -->
+<!-- ************************** -->
+         
+         <div class="col-12 mt-2 shadow">
+                <div class="row">
+                    <div class="col-8">
+                            <form class="form-inline my-2">
+                                <div class="dropdown">
+                                        <button 
+                                        class="btn btn-primary form-control dropdown-toggle" 
+                                        type="button" id="performActionId-1" 
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perform Action</button>
+            
+                                    <div class="dropdown-menu" aria-labelledby="performActionId-1">
+                                        <a class="dropdown-item" href="#">Credential History</a>
+                                        <a class="dropdown-item" href="#">Update</a>
+                                        <a class="dropdown-item" href="#">Driver Record Report (Print)</a>
+                                    </div>
+                                </div>
+                            </form>
+                     </div>
+                    <div class="col-4">
+                            <form class="form-inline justify-content-end">
+
+                                    <a href="#" id="bmvSearchLink" onClick="bmvSearch();return false;" title="New Search" style="font-size: 1.5em; color:black" class="px-4">
+                                      <i id="bmvSearch" class="fas fa-search"></i>
+                                    </a>
+        
+                                    <div class="d-none d-lg-inline">
+                                        <a href="#" id="bmvReportLink" onClick="bmvDummy('report');return false;" title="Report" style="font-size: 1.5em; color:black" class="px-4">
+                                            <i id="bmvReport" class="fas fa-print"></i>
+                                        </a>
+                                                  
+                                        <a href="#" id="bmvLetterLink" onClick="bmvDummy('letter');return false;" title="Letter" style="font-size: 1.5em; color:black" class="px-4">
+                                        <i id="bmvLetter" class="fas fa-envelope"></i>
+                                        </a>
+        
+                                        <a href="#" id="bmvCheckoutLink" onClick="bmvDummy('shopping');return false;" title="Shopping Cart" style="font-size: 1.5em; color:black" class="px-4">
+                                            <i id="bmvCheckout" class="fas fa-shopping-cart"></i>
+                                        </a>
+                      
+                                    </div>
+        
+                                </form>              
+                    </div>
+
+<!-- ************************** -->
+<!-- ****** Breadcrumb  ******* -->
+<!-- ************************** -->
+                    
+                    <div class="col-12">
+
+                        <nav id="Page451-bread" aria-label="breadcrumb">
+                            <ol class="breadcrumb cyan lighten-4">
+                                    <li class="breadcrumb-item"><a class="" href="template-home.html">BMV Home</a></li>
+                                    <li class="breadcrumb-item"><a class="" href="template-driver.html">Driver Info...</a></li>
+                                    <li class="breadcrumb-item active">Person Detail</li>
+                            </ol>
+                        </nav>
+
+                    </div>
+
+      </div>
+    
+<!-- ************************** -->
+<!-- ***** Other Tables  ****** -->
+<!-- ************************** -->
+
+<div class="Page451-body">
+    
+<!-- Legal Presence -->
+<div class="row mb-2">
+    <div class="col-12 shadow table-responsive">
+        
+        <form class="form-inline bg-secondary text-white font-weight-bold my-1">
+            <button id="persDetTbl1" class="btn btn-primary form-control form-control-sm m-1">Add</button>
+            <h5 class="ml-2 mt-1">Legal Presence</h5>
+        </form>
+
+        <div class="shadow table-responsive mb-3">
+            <table class="table-sm table-striped col-12">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Delete</th><th>Date</th><th>Citizenship</th><th>Under Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>No</td><td><a href="#" class="font-weight-bold">08/11/2011</a></td><td>Citizen</td><td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+    
+<!-- LEP - Limited English Proficiency -->
+<div class="row mb-2">
+    <div class="col-12 shadow table-responsive">
+        
+        <form class="form-inline bg-secondary text-white font-weight-bold my-1">
+            <button id="persDetTbl2" class="btn btn-primary form-control form-control-sm m-1">Add</button>
+            <h5 class="ml-2 mt-1">LEP - Limited English Proficiency</h5>
+        </form>
+
+        <div class="shadow table-responsive mb-3">
+            <table class="table-sm table-striped col-12">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Delete</th><th>Date</th><th>Language</th><th>Other Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+    
+<!-- Person Detail (None) -->
+<div class="row mb-2">
+    <div class="col-12 shadow">
+        
+        <form>
+            <div class="form-row">
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-1" class="font-weight-bold">First Name</label>
+                    <input id="persDetTbl2-1" type="text" class="form-control form-control-sm" placeholder="First Name" value="DOTTIE">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-2" class="font-weight-bold">Middle Name</label>
+                    <input id="persDetTbl2-2" type="text" class="form-control form-control-sm" placeholder="Middle Name" value="F">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-3" class="font-weight-bold">Last Name</label>
+                    <input id="persDetTbl2-3" type="text" class="form-control form-control-sm" placeholder="Last Name" value="DUCK">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-4" class="font-weight-bold">Suffix</label>
+                    <input id="persDetTbl2-4" type="text" class="form-control form-control-sm" placeholder="Suffix" value="">
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-5" class="font-weight-bold">DOB</label>
+                    <input id="persDetTbl2-5" type="text" class="form-control form-control-sm" placeholder="Birth Date" value="06/28/1983">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-6" class="font-weight-bold">SSN</label>
+                    <input id="persDetTbl2-6" type="text" class="form-control form-control-sm" placeholder="Social Security" value="***-*4-8112">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-7" class="font-weight-bold">Sex</label>
+                    <select id="persDetTbl2-7" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option selected>Female</option>
+                        <option>Male</option>
+                        <option>Non-Binary</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-8" class="font-weight-bold">EIN</label>
+                    <input id="persDetTbl2-8" type="text" class="form-control form-control-sm" placeholder="EIN" value="">
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-9" class="font-weight-bold">DOT</label>
+                    <input id="persDetTbl2-9" type="text" class="form-control form-control-sm" placeholder="DOT" value="">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-10" class="font-weight-bold">Name Change Reason</label>
+                    <select id="persDetTbl2-10" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Address/Name Change Form </option>
+                        <option>Correction</option>
+                        <option>Legal</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-11" class="font-weight-bold">Deceased Indicator</label>
+                    <select id="persDetTbl2-11" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-12" class="font-weight-bold">Non-res Svc Person</label>
+                    <select id="persDetTbl2-12" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-13" class="font-weight-bold">Access Restricted Information</label>
+                    <select id="persDetTbl2-13" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-14" class="font-weight-bold">Tax Exempt Number</label>
+                    <input id="persDetTbl2-14" type="text" class="form-control form-control-sm" placeholder="Tax Exempt Number" value="">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-13" class="font-weight-bold">Grant Privacy Release</label>
+                    <select id="persDetTbl2-13" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-13" class="font-weight-bold">Info Fee Exempt</label>
+                    <select id="persDetTbl2-13" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-14" class="font-weight-bold">Duplicate over write flag</label>
+                    <select id="persDetTbl2-14" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-15" class="font-weight-bold">EDI Number</label>
+                    <input id="persDetTbl2-15" type="text" class="form-control form-control-sm" placeholder="EDI Number" value="">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-16" class="font-weight-bold">Confidential Type</label>
+                    <select id="persDetTbl2-16" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option selected>None</option>
+                        <option>Protected</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-17" class="font-weight-bold">Jury Duty Flag</label>
+                    <select id="persDetTbl2-17" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-18" class="font-weight-bold">Organ Donor</label>
+                    <select id="persDetTbl2-18" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option selected>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-19" class="font-weight-bold">Organ Donor Effective Date</label>
+                    <input id="persDetTbl2-19" type="text" class="form-control form-control-sm" placeholder="Organ Donor Effective Date" value="08/11/2011">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-20" class="font-weight-bold">Organ Donor Expiraton Date</label>
+                    <input id="persDetTbl2-20" type="text" class="form-control form-control-sm" placeholder="Organ Donor Effective Date" value="06/28/2017">
+                </div>
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-21" class="font-weight-bold">Hearing Impairment</label>
+                    <select id="persDetTbl2-21" class="form-control form-control-sm">
+                        <option>Select ...</option>
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 col-lg-3">
+                    <label for="persDetTbl2-22" class="font-weight-bold">Notes</label>
+                    <textarea id="persDetTbl2-22" class="form-control form-control-sm" rows="5" placeholder="Notes"></textarea>
+                </div>
+        
+            </div>
+        </form>
+
+    </div>
+</div>
+    
+<!-- Customer Roles -->
+<div class="row mb-2">
+    <div class="col-12 shadow table-responsive">
+        
+        <form class="form-inline bg-secondary text-white font-weight-bold m-1">
+            <h5 class="ml-2 my-2">Customer Roles</h5>
+        </form>
+
+        <div class="shadow table-responsive mb-3">
+            <table class="table-sm table-striped col-12">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Role</th><th>Start Date</th><th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><a href="#" class="font-weight-bold">Driver</a></td><td>08/11/2011</td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+    
+<!-- Addresses -->
+<div class="row mb-2">
+    <div class="col-12 shadow table-responsive">
+        
+        <form class="form-inline bg-secondary text-white font-weight-bold my-1">
+            <button id="persDetTbl2" class="btn btn-primary form-control form-control-sm m-1">Add</button>
+            <h5 class="ml-2 mt-1">Addresses</h5>
+        </form>
+
+        <div class="shadow table-responsive mb-3">
+            <table class="table-sm table-striped col-12">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Role</th><th>Type</th><th>Address</th><th>Start Date</th><th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unassigned</td>
+                        <td><a href="template-address.html" class="font-weight-bold">Physical Address</a></td>
+                        <td>196 BRIDGE STREET WESTBROOK ME 04092</td>
+                        <td>08/11/2011</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Primary</td>
+                        <td><a href="template-address.html" class="font-weight-bold">Mailing location</a></td>
+                        <td>196 BRIDGE STREET WESTBROOK ME 04092</td>
+                        <td>08/11/2011</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+    
+</div>
+
+  </main>
+
+<footer class="footer">
+    <div>
+        <small class="d-flex justify-content-between">
+            <div class="px-4">
+                <span class="px-2">Login:</span><span id="userId" class="font-weight-bold">None</span>
+                <span class="px-2">Location:</span><span id="locationId" class="font-weight-bold">None</span>
+                <span class="px-2">Drawer:</span><span id="draverId" class="font-weight-bold">None</span>
+                <span class="px-2">Current Cart:</span><span id="cartId" class="font-weight-bold">No Cart</span>
+            </div>
+            <div class="px-4 d-none d-lg-block">
+                <span class="px-2">Environment:</span><span id="environmentId" class="font-weight-bold"></span>
+                <span class="px-2">Database:</span><span id="databaseId" class="font-weight-bold"></span>
+                <span class="px-2">Version:</span><span id="versionId" class="font-weight-bold"></span>
+            </div>
+        </small>
+    </div>
+    
+    </div>
+</footer>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+
+        <script>
+
+            var fakeData = [
+                {user: 'None', title: 'Login', location: 'None', locationTitle: 'Set location', drawer:'None'}, 
+                {user: 'DKolomy', title: 'Logout', location: 'None', locationTitle: 'Remove location', drawer:'None'}
+            ];
+
+            // Set Environment
+            var envData = {
+                environment: 'tomdev1',
+                database: 'BMVTEST1',
+                version: '0.0',
+                currentCart: 'No Cart'
+            };
+            $('#environmentId').text(envData.environment);
+            $('#databaseId').text(envData.database);
+            $('#versionId').text(envData.version);
+
+            // Login
+            var loginFlag = false;
+            function bmvLogin() {
+                $('#bmvLogin').toggleClass('fa-user-times fa-user-check');
+                $('#userId').text((loginFlag) ? fakeData[0].user : fakeData[1].user);
+                $('#bmvLoginLink').prop('title', (loginFlag) ? fakeData[0].title : fakeData[1].title);
+                
+                if(!loginFlag) {
+                    $('#login').val(fakeData[1].user);
+                    $('#password').val('1234567890');
+                    $('#myLogin').modal();
+                }
+
+                loginFlag = !loginFlag;
+            };
+
+            // Location
+            var locationFlag = false;
+            var $select1 = $( '#select1' ),
+		        $select2 = $( '#select2' ),
+                $options = $select2.find( 'option' ),
+                $locationBtn = $( '#setLocationBtn' );
+
+            $select1.on( 'change', function() {
+                $select2.html( $options.filter( '[value="' + this.value + '"]' ) );
+            } ).trigger( 'change' );
+
+            $locationBtn.on( 'click', function() {
+                var drawerArr = ($("#select2 option:selected").text()).split(" ");
+                fakeData[1].location = $("#select1 option:selected").text();
+                fakeData[1].drawer = drawerArr[0];
+                $('#locationId').text(fakeData[1].location);
+                $('#draverId').text(fakeData[1].drawer);
+            });
+
+            function bmvLocation() {
+                $('#bmvLocation').toggleClass('fa-map-marker-alt fa-map-marker');
+                $('#locationId').text((locationFlag) ? fakeData[0].location : fakeData[1].location);
+                $('#draverId').text((locationFlag) ? fakeData[0].drawer : fakeData[1].drawer);
+                $('#bmvLocationLink').prop('title', (locationFlag) ? fakeData[0].locationTitle : fakeData[1].locationTitle);
+
+                if(!locationFlag) {
+                    $('#myLocation').modal();
+                }
+
+                locationFlag = !locationFlag;
+            };
+
+            // Configuration
+            function bmvConfig() {
+                //Config Data
+                $('#environmentConfigId').text(envData.environment);
+                $('#databaseConfigId').text(envData.database);
+                $('#versionConfigId').text(envData.version);
+
+                // User Data
+                $('#loginConfigId').text(fakeData[1].user);
+                $('#locationConfigId').text(fakeData[1].location);
+                $('#draverConfigId').text(fakeData[1].drawer);
+                $('#currentCartConfigId').text(envData.currentCart);
+
+                $('#myConfiguration').modal();
+            }
+
+            // Home Page
+            function goHome() {
+                loginFlag = false;
+                locationFlag = false;
+                $('#bmvLogin').removeClass('fa-user-check').addClass('fa-user-times');
+                $('#bmvLocation').removeClass('fa-map-marker').addClass('fa-map-marker-alt');
+                $('#userId').text(fakeData[0].user);
+                $('#bmvLoginLink').prop('title', fakeData[0].title);
+                $('#locationId').text(fakeData[0].location);
+                $('#bmvLocationLink').prop('title', fakeData[0].locationTitle);
+                $('#draverId').text(fakeData[0].drawer);
+                location.href = "template-home.html";
+            };
+
+            // Search
+            function bmvSearch() {
+                $('#mySearch').modal();
+            }
+
+            // Dummy
+            function bmvDummy(template) {
+                var dummyList = {
+                    report: {
+                        modalIcon: 'dummyReport',
+                        modalText: 'textReport'
+                    },
+                    letter: {
+                        modalIcon: 'dummyLetter',
+                        modalText: 'textLetter'
+                    },
+                    shopping: {
+                        modalIcon: 'dummyCheckout',
+                        modalText: 'textCheckout'
+                    },
+                    help: {
+                        modalIcon: 'dummyHelp',
+                        modalText: 'textHelp'
+                    },
+                    reset: {
+                        modalIcon: 'dummyReset',
+                        modalText: 'textReset'
+                    }
+                }
+
+                $.each(dummyList, function(i, obj) {
+                    $('#'+obj.modalIcon).hide();
+                    $('#'+obj.modalText).hide();
+                });
+
+                switch(template) {
+                    case 'report':
+                        $("#"+dummyList.report.modalIcon).show();
+                        $("#"+dummyList.report.modalText).show();
+                        break;
+
+                    case 'letter':
+                        $("#"+dummyList.letter.modalIcon).show();
+                        $("#"+dummyList.letter.modalText).show();
+                        break;
+                    
+                    case 'shopping':
+                        $("#"+dummyList.shopping.modalIcon).show();
+                        $("#"+dummyList.shopping.modalText).show();
+                        break;
+
+                    case 'help':
+                        $("#"+dummyList.help.modalIcon).show();
+                        $("#"+dummyList.help.modalText).show();
+                        break;
+
+                    case 'reset':
+                        $("#"+dummyList.reset.modalIcon).show();
+                        $("#"+dummyList.reset.modalText).show();
+                        break;
+
+                    default:
+                        alert('Unknown: '+template);
+                }
+
+//                $('#myDummy').draggable({
+//                   handle: ".modal-header"
+//                });
+                $('#myDummy').modal();
+
+            }
+
+        </script>
+
+    </body>
+</html>
